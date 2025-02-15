@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omniplex Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Container -->
+    <div class="login-container">
+        <!-- Sign-Up Box -->
+        <div class="login-box">
+            <h1>Create an Account</h1>
+            <p>Sign up to get started with Omniplex</p>
+            <form id="signup-form">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="signup-text">Already have an account? <a href="index.html">Sign In</a></p>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        // Form Submission Event
+        document.getElementById("signup-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password === confirmPassword) {
+                alert("Account Created Successfully! This is a demo page.");
+            } else {
+                alert("Passwords do not match. Please try again!");
+            }
+        });
+    </script>
+</body>
+</html>

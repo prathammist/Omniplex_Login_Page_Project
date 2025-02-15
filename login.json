@@ -1,0 +1,138 @@
+{
+  "page": {
+    "doctype": "html",
+    "language": "en",
+    "head": {
+      "meta": [
+        { "charset": "UTF-8" },
+        { "name": "viewport", "content": "width=device-width, initial-scale=1.0" }
+      ],
+      "title": "Omniplex Login",
+      "links": [
+        { "rel": "stylesheet", "href": "styles.css" },
+        { "rel": "icon", "href": "favicon.ico" }
+      ]
+    },
+    "body": {
+      "container": {
+        "class": "login-container",
+        "loginBox": {
+          "class": "login-box",
+          "heading": "Welcome Back",
+          "paragraph": "Sign in to continue to Omniplex",
+          "form": {
+            "id": "login-form",
+            "inputs": [
+              { "type": "email", "id": "email", "placeholder": "Email", "required": true },
+              { "type": "password", "id": "password", "placeholder": "Password", "required": true }
+            ],
+            "button": { "type": "submit", "text": "Sign In" }
+          },
+          "signupText": {
+            "text": "Don't have an account?",
+            "link": { "href": "#", "text": "Sign Up" }
+          }
+        },
+        "quoteContainer": {
+          "class": "quote-container",
+          "id": "quote",
+          "text": "Fetching an inspirational quote..."
+        }
+      },
+      "scripts": [
+        {
+          "description": "Fetch Inspirational Quote",
+          "function": "fetchQuote",
+          "api": "https://api.quotable.io/random",
+          "onError": "Couldn't fetch the quote. Please try again later!"
+        },
+        {
+          "description": "Handle Form Submission",
+          "event": "submit",
+          "target": "#login-form",
+          "action": "Alert: Login Successful"
+        }
+      ]
+    },
+    "styles": {
+      "generalReset": {
+        "properties": {
+          "margin": 0,
+          "padding": 0,
+          "boxSizing": "border-box",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "body": {
+        "properties": {
+          "background": "linear-gradient(135deg, #2e2e2e, #1a1a1a)",
+          "color": "#fff",
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "height": "100vh",
+          "margin": 0
+        }
+      },
+      "loginContainer": {
+        "properties": {
+          "textAlign": "center",
+          "background": "#333",
+          "padding": "2rem",
+          "borderRadius": "10px",
+          "boxShadow": "0 4px 8px rgba(0, 0, 0, 0.3)",
+          "width": "100%",
+          "maxWidth": "400px"
+        }
+      },
+      "loginBox": {
+        "headings": {
+          "h1": { "color": "#f0f0f0", "fontSize": "2rem", "marginBottom": "0.5rem" },
+          "p": { "color": "#ccc", "fontSize": "0.9rem", "marginBottom": "1.5rem" }
+        }
+      },
+      "form": {
+        "inputs": {
+          "properties": {
+            "display": "block",
+            "width": "100%",
+            "padding": "0.8rem",
+            "margin": "0.8rem 0",
+            "border": "none",
+            "borderRadius": "5px",
+            "backgroundColor": "#555",
+            "color": "#fff",
+            "outline": "none",
+            "fontSize": "1rem"
+          }
+        },
+        "button": {
+          "properties": {
+            "backgroundColor": "#ff9800",
+            "color": "#fff",
+            "border": "none",
+            "padding": "0.8rem",
+            "width": "100%",
+            "borderRadius": "5px",
+            "cursor": "pointer",
+            "fontSize": "1rem",
+            "transition": "background 0.3s"
+          },
+          "hover": { "backgroundColor": "#e68900" }
+        }
+      },
+      "signupText": {
+        "link": { "color": "#ff9800", "textDecoration": "none", "fontWeight": "bold" },
+        "hover": { "textDecoration": "underline" }
+      },
+      "quoteContainer": {
+        "properties": {
+          "marginTop": "2rem",
+          "fontStyle": "italic",
+          "fontSize": "0.9rem",
+          "color": "#ddd"
+        }
+      }
+    }
+  }
+}

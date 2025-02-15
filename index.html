@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omniplex Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Container -->
+    <div class="login-container">
+        <!-- Login Box -->
+        <div class="login-box">
+            <h1>Welcome Back</h1>
+            <p>Sign in to continue to Omniplex</p>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+            </form>
+            <p class="signup-text">Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+        <!-- API Quote -->
+        <div class="quote-container">
+            <p id="quote">Fetching an inspirational quote...</p>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        // Fetch Inspirational Quote
+        async function fetchQuote() {
+            const quoteElement = document.getElementById('quote');
+            try {
+                const response = await fetch('https://api.quotable.io/random');
+                const data = await response.json();
+                quoteElement.textContent = `"${data.content}" — ${data.author}`;
+            } catch (error) {
+                console.error("Error fetching quote:", error);
+                quoteElement.textContent = "Couldn't fetch the quote. Please try again later!";
+            }
+        }
+
+        // Call the Quote Fetch Function
+        fetchQuote();
+
+        // Form Submission Event
+        document.getElementById("login-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Login Successful! This is a demo page.");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Login Container */
+.login-container {
+    text-align: center;
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    animation: slideUp 0.5s ease-in-out;
+}
+
+/* Headings */
+.login-box h1 {
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards;
+}
+
+.login-box p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+/* Form Input */
+form input {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards;
+}
+
+form input:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+form button {
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards;
+    animation-delay: 0.4s;
+}
+
+form button:hover {
+    background-color: #e68900;
+}
+
+/* Signup Text */
+.signup-text a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Quote Styling */
+.quote-container {
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #ddd;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
